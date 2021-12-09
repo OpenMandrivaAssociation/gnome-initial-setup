@@ -45,7 +45,7 @@ BuildRequires:  pkgconfig(webkit2gtk-4.0) >= 2.26.0
 Initial assistant, helping you to get the system up and running.
 
 %prep
-%autosetup -1
+%autosetup -p1
 
 %build
 %meson \
