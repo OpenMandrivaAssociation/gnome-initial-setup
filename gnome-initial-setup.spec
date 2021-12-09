@@ -1,15 +1,16 @@
+%define url_ver %(echo %{version}|cut -d. -f1,2)
+
 Name:           gnome-initial-setup
 Version:        41.2
-Release:        
+Release:        1
 Summary:        GNOME Initial Setup Assistant
 License:        GPL-2.0-or-later
 Group:          System/GUI/GNOME
 URL:            https://wiki.gnome.org/Design/OS/InitialSetup
-Source0:        https://download.gnome.org/sources/gnome-initial-setup/41/%{name}-%{version}.tar.xz
+Source0:        https://download.gnome.org/sources/gnome-initial-setup/%{url_ver}/%{name}-%{version}.tar.xz
 
-BuildRequires:  krb5-devel
-BuildRequires:  meson >= 0.50.0
-BuildRequires:  pkgconfig
+BuildRequires:  pkgconfig(krb5)
+BuildRequires:  meson
 BuildRequires:  vala
 BuildRequires:  pkgconfig(accountsservice)
 BuildRequires:  pkgconfig(cheese) >= 3.28
@@ -39,26 +40,16 @@ BuildRequires:  pkgconfig(pwquality)
 BuildRequires:  pkgconfig(rest-0.7)
 BuildRequires:  pkgconfig(systemd) >= 242
 BuildRequires:  pkgconfig(webkit2gtk-4.0) >= 2.26.0
-# Remove the yelp document dependency on both sle and leap, keeping tw consistent with upstream
-%if !0%{?sle_version}
-Requires:       gnome-getting-started-docs
-%endif
 
 %description
 Initial assistant, helping you to get the system up and running.
 
-%lang_package
-
 %prep
-%setup -q
+%autosetup -1
 
 %build
 %meson \
-        -Dparental_controls=disabled \
-%if 0%{?sle_version} && 0%{?sle_version} < 160000
-        -Dsystemd=false \
-%endif
-	%{nil}
+        -Dparental_controls=disabled
 %meson_build
 
 %install
@@ -68,7 +59,7 @@ Initial assistant, helping you to get the system up and running.
 %pre
 useradd -rM -d /run/gnome-initial-setup/ -s /sbin/nologin %{name} || :
 
-%files
+%files -f %{name}.lang
 %license COPYING
 %doc README.md
 %{_datadir}/applications/gnome-initial-setup.desktop
@@ -83,7 +74,6 @@ useradd -rM -d /run/gnome-initial-setup/ -s /sbin/nologin %{name} || :
 %{_libexecdir}/gnome-initial-setup-copy-worker
 %{_sysconfdir}/xdg/autostart/gnome-initial-setup-copy-worker.desktop
 %{_sysconfdir}/xdg/autostart/gnome-initial-setup-first-login.desktop
-%if !0%{?sle_version} || 0%{?sle_version} >= 160000
 %{_userunitdir}/gnome-initial-setup-copy-worker.service
 %{_userunitdir}/gnome-initial-setup-first-login.service
 %dir %{_userunitdir}/gnome-session@gnome-initial-setup.target.d
@@ -91,6 +81,3 @@ useradd -rM -d /run/gnome-initial-setup/ -s /sbin/nologin %{name} || :
 %dir %{_userunitdir}/gnome-session.target.wants
 %{_userunitdir}/gnome-session.target.wants/gnome-initial-setup-copy-worker.service
 %{_userunitdir}/gnome-session.target.wants/gnome-initial-setup-first-login.service
-%endif
-
-%files lang -f %{name}.lang
