@@ -30,6 +30,7 @@ BuildRequires:  pkgconfig(gweather4)
 BuildRequires:  pkgconfig(ibus-1.0) >= 1.4.99
 BuildRequires:  pkgconfig(iso-codes)
 BuildRequires:  pkgconfig(json-glib-1.0)
+BuildRequires:  pkgconfig(libhandy-1)
 BuildRequires:  pkgconfig(libgeoclue-2.0) >= 2.3.1
 BuildRequires:  pkgconfig(libnm) >= 1.2
 BuildRequires:  pkgconfig(libnma) >= 1.0
