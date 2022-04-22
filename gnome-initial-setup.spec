@@ -19,7 +19,7 @@ BuildRequires:  pkgconfig(fontconfig)
 BuildRequires:  pkgconfig(gdm) >= 3.8.3
 BuildRequires:  pkgconfig(geocode-glib-1.0)
 BuildRequires:  pkgconfig(gio-unix-2.0) >= 2.53.0
-BuildRequires:  pkgconfig(gnome-desktop-3.0) >= 3.7.5
+BuildRequires:  pkgconfig(gnome-desktop-4)
 BuildRequires:  pkgconfig(goa-1.0)
 BuildRequires:  pkgconfig(goa-backend-1.0)
 BuildRequires:  pkgconfig(gobject-introspection-1.0)
