@@ -1,7 +1,7 @@
 %define url_ver %(echo %{version}|cut -d. -f1,2)
 
 Name:           gnome-initial-setup
-Version:        42.2
+Version:        43.0
 Release:        1
 Summary:        GNOME Initial Setup Assistant
 License:        GPL-2.0-or-later
@@ -17,7 +17,7 @@ BuildRequires:  pkgconfig(cheese) >= 3.28
 BuildRequires:  pkgconfig(cheese-gtk) >= 3.3.5
 BuildRequires:  pkgconfig(fontconfig)
 BuildRequires:  pkgconfig(gdm) >= 3.8.3
-BuildRequires:  pkgconfig(geocode-glib-1.0)
+BuildRequires:  pkgconfig(geocode-glib-2.0)
 BuildRequires:  pkgconfig(gio-unix-2.0) >= 2.53.0
 BuildRequires:  pkgconfig(gnome-desktop-4)
 BuildRequires:  pkgconfig(goa-1.0)
@@ -25,22 +25,24 @@ BuildRequires:  pkgconfig(goa-backend-1.0)
 BuildRequires:  pkgconfig(gobject-introspection-1.0)
 BuildRequires:  pkgconfig(gsettings-desktop-schemas) >= 3.37.1
 BuildRequires:  pkgconfig(gstreamer-1.0)
-BuildRequires:  pkgconfig(gtk+-3.0) >= 3.11.3
+BuildRequires:  pkgconfig(gtk4)
 BuildRequires:  pkgconfig(gweather4)
 BuildRequires:  pkgconfig(ibus-1.0) >= 1.4.99
 BuildRequires:  pkgconfig(iso-codes)
 BuildRequires:  pkgconfig(json-glib-1.0)
+BuildRequires:  pkgconfig(libadwaita-1)
 BuildRequires:  pkgconfig(libhandy-1)
 BuildRequires:  pkgconfig(libgeoclue-2.0) >= 2.3.1
 BuildRequires:  pkgconfig(libnm) >= 1.2
 BuildRequires:  pkgconfig(libnma) >= 1.0
 BuildRequires:  pkgconfig(libsecret-1) >= 0.18.8
+BuildRequires:  pkgconfig(libsoup-3.0)
 BuildRequires:  pkgconfig(pango) >= 1.32.5
 BuildRequires:  pkgconfig(polkit-gobject-1) >= 0.103
 BuildRequires:  pkgconfig(pwquality)
-BuildRequires:  pkgconfig(rest-0.7)
+BuildRequires:  pkgconfig(rest-1.0)
 BuildRequires:  pkgconfig(systemd) >= 242
-BuildRequires:  pkgconfig(webkit2gtk-4.0) >= 2.26.0
+BuildRequires:  pkgconfig(webkit2gtk-5.0)
 
 %description
 Initial assistant, helping you to get the system up and running.
