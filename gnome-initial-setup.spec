@@ -80,7 +80,7 @@ useradd -rM -d /run/gnome-initial-setup/ -s /sbin/nologin %{name} || :
 %{_sysconfdir}/xdg/autostart/gnome-initial-setup-first-login.desktop
 %{_userunitdir}/gnome-initial-setup-copy-worker.service
 %{_userunitdir}/gnome-initial-setup-first-login.service
-%{_userunitdir}/gnome-initial-setup.conf
+%{_prefix}/lib/sysusers.d/gnome-initial-setup.conf
 %dir %{_userunitdir}/gnome-session@gnome-initial-setup.target.d
 %{_userunitdir}/gnome-session@gnome-initial-setup.target.d/session.conf
 %dir %{_userunitdir}/gnome-session.target.wants
