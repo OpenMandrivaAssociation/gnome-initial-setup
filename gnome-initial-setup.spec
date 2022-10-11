@@ -75,10 +75,12 @@ useradd -rM -d /run/gnome-initial-setup/ -s /sbin/nologin %{name} || :
 %{_datadir}/polkit-1/rules.d/20-gnome-initial-setup.rules
 %{_libexecdir}/gnome-initial-setup
 %{_libexecdir}/gnome-initial-setup-copy-worker
+%{_libexecdir}/gnome-initial-setup-goa-helper
 %{_sysconfdir}/xdg/autostart/gnome-initial-setup-copy-worker.desktop
 %{_sysconfdir}/xdg/autostart/gnome-initial-setup-first-login.desktop
 %{_userunitdir}/gnome-initial-setup-copy-worker.service
 %{_userunitdir}/gnome-initial-setup-first-login.service
+%{_userunitdir}/gnome-initial-setup.conf
 %dir %{_userunitdir}/gnome-session@gnome-initial-setup.target.d
 %{_userunitdir}/gnome-session@gnome-initial-setup.target.d/session.conf
 %dir %{_userunitdir}/gnome-session.target.wants
