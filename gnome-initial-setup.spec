@@ -1,8 +1,8 @@
 %define url_ver %(echo %{version}|cut -d. -f1,2)
 
 Name:           gnome-initial-setup
-Version:        43.2
-Release:        2
+Version:        44.0
+Release:        1
 Summary:        GNOME Initial Setup Assistant
 License:        GPL-2.0-or-later
 Group:          System/GUI/GNOME
@@ -42,7 +42,7 @@ BuildRequires:  pkgconfig(polkit-gobject-1) >= 0.103
 BuildRequires:  pkgconfig(pwquality)
 BuildRequires:  pkgconfig(rest-1.0)
 BuildRequires:  pkgconfig(systemd) >= 242
-BuildRequires:  pkgconfig(webkit2gtk-5.0)
+BuildRequires:  pkgconfig(webkitgtk-6.0)
 
 %description
 Initial assistant, helping you to get the system up and running.
