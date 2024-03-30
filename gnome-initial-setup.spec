@@ -79,7 +79,6 @@ useradd -rM -d /run/gnome-initial-setup/ -s /sbin/nologin %{name} || :
 %{_datadir}/gnome-initial-setup/initial-setup-dconf-defaults
 %{_libexecdir}/gnome-initial-setup
 %{_libexecdir}/gnome-initial-setup-copy-worker
-%{_libexecdir}/gnome-initial-setup-goa-helper
 %{_sysconfdir}/xdg/autostart/gnome-initial-setup-copy-worker.desktop
 %{_sysconfdir}/xdg/autostart/gnome-initial-setup-first-login.desktop
 %{_userunitdir}/gnome-initial-setup-copy-worker.service
