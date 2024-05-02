@@ -87,5 +87,5 @@ useradd -rM -d /run/gnome-initial-setup/ -s /sbin/nologin %{name} || :
 %dir %{_userunitdir}/gnome-session@gnome-initial-setup.target.d
 %{_userunitdir}/gnome-session@gnome-initial-setup.target.d/session.conf
 %dir %{_userunitdir}/gnome-session.target.wants
-%{_userunitdir}/gnome-session.target.wants/gnome-initial-setup-copy-worker.service
+#{_userunitdir}/gnome-session.target.wants/gnome-initial-setup-copy-worker.service
 %{_userunitdir}/gnome-session.target.wants/gnome-initial-setup-first-login.service
