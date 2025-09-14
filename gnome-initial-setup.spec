@@ -67,7 +67,7 @@ useradd -rM -d /run/gnome-initial-setup/ -s /sbin/nologin %{name} || :
 %files -f %{name}.lang
 %license COPYING
 %doc README.md
-%{_datadir}/applications/gnome-initial-setup.desktop
+#{_datadir}/applications/gnome-initial-setup.desktop
 %dir %{_datadir}/gnome-session
 %dir %{_datadir}/gnome-session/sessions
 %{_datadir}/gnome-session/sessions/gnome-initial-setup.session
@@ -79,14 +79,14 @@ useradd -rM -d /run/gnome-initial-setup/ -s /sbin/nologin %{name} || :
 %{_datadir}/gnome-initial-setup/initial-setup-dconf-defaults
 %{_libexecdir}/gnome-initial-setup
 %{_libexecdir}/gnome-initial-setup-copy-worker
-%{_sysconfdir}/xdg/autostart/gnome-initial-setup-copy-worker.desktop
-%{_sysconfdir}/xdg/autostart/gnome-initial-setup-first-login.desktop
-%{_userunitdir}/basic.target.wants/gnome-initial-setup-copy-worker.service
+#{_sysconfdir}/xdg/autostart/gnome-initial-setup-copy-worker.desktop
+#{_sysconfdir}/xdg/autostart/gnome-initial-setup-first-login.desktop
+#{_userunitdir}/basic.target.wants/gnome-initial-setup-copy-worker.service
 %{_userunitdir}/gnome-initial-setup-copy-worker.service
 %{_userunitdir}/gnome-initial-setup-first-login.service
 %{_prefix}/lib/sysusers.d/gnome-initial-setup.conf
 %dir %{_userunitdir}/gnome-session@gnome-initial-setup.target.d
-%{_userunitdir}/gnome-session@gnome-initial-setup.target.d/session.conf
+#{_userunitdir}/gnome-session@gnome-initial-setup.target.d/session.conf
 %dir %{_userunitdir}/gnome-session.target.wants
 #{_userunitdir}/gnome-session.target.wants/gnome-initial-setup-copy-worker.service
 %{_userunitdir}/gnome-session.target.wants/gnome-initial-setup-first-login.service
