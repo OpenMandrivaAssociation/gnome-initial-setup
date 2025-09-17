@@ -76,6 +76,7 @@ useradd -rM -d /run/gnome-initial-setup/ -s /sbin/nologin %{name} || :
 %{_datadir}/gnome-shell/modes/initial-setup.json
 %{_datadir}/polkit-1/rules.d/20-gnome-initial-setup.rules
 %{_datadir}/dconf/profile/gnome-initial-setup
+%{_datadir}/applications/gnome-initial-setup.desktop
 %{_datadir}/gnome-initial-setup/initial-setup-dconf-defaults
 %{_libexecdir}/gnome-initial-setup
 %{_libexecdir}/gnome-initial-setup-copy-worker
