@@ -2,7 +2,7 @@
 
 Name:           gnome-initial-setup
 Version:        50.0
-Release:        2
+Release:        3
 Summary:        GNOME Initial Setup Assistant
 License:        GPL-2.0-or-later
 Group:          System/GUI/GNOME
